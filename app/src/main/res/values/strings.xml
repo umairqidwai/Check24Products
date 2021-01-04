@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">Check 24 Products</string>
+    <string name="no_products_found_msg">No Products Found!</string>
+</resources>
