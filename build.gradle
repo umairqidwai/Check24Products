@@ -12,6 +12,16 @@ buildscript {
     }
 }
 
+ext{
+    glideVersion = '4.11.0'
+    glideCompilerVersion = '4.11.0'
+    rxJavaVersion = '2.2.20'
+    rxAndroidVersion = '2.0.1'
+    retrofitVersion = '2.4.0'
+    retrofitAdapter = '2.9.0'
+    retrofitGsonVersion = '2.4.0'
+}
+
 allprojects {
     repositories {
         google()

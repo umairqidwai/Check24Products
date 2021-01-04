@@ -1,11 +1,11 @@
 package com.example.check24products.app.presenter;
 
+import androidx.annotation.NonNull;
+
 import com.example.check24products.domain.interactor.GetProducts;
 import com.example.check24products.data.model.ProductResponse;
 import com.example.check24products.app.presenter.contract.MainView;
-
 import io.reactivex.android.schedulers.AndroidSchedulers;
-import io.reactivex.annotations.NonNull;
 import io.reactivex.observers.DisposableObserver;
 import retrofit2.Response;
 
