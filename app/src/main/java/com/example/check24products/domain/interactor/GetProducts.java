@@ -2,7 +2,7 @@ package com.example.check24products.domain.interactor;
 
 import com.example.check24products.data.model.ProductResponse;
 import com.example.check24products.data.repo.ProductsRepo;
-import com.example.check24products.domain.interactor.repo.impl.ProductsRepoImpl;
+import com.example.check24products.data.repo.impl.ProductsRepoImpl;
 
 import io.reactivex.Observable;
 import io.reactivex.schedulers.Schedulers;

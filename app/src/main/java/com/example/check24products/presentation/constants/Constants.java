@@ -1,4 +1,4 @@
-package com.example.check24products.app.constants;
+package com.example.check24products.presentation.constants;
 
 public class Constants {
 

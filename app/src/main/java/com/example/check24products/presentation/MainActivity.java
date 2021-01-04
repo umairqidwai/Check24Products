@@ -1,4 +1,4 @@
-package com.example.check24products.app;
+package com.example.check24products.presentation;
 
 import android.os.Bundle;
 import android.view.View;
@@ -12,12 +12,12 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.example.check24products.R;
-import com.example.check24products.app.adapter.ProductListAdapter;
+import com.example.check24products.presentation.adapter.ProductListAdapter;
 import com.example.check24products.databinding.ActivityMainBinding;
 import com.example.check24products.data.model.Header;
 import com.example.check24products.data.model.Product;
-import com.example.check24products.app.presenter.MainPresenter;
-import com.example.check24products.app.presenter.contract.MainView;
+import com.example.check24products.presentation.presenter.MainPresenter;
+import com.example.check24products.presentation.presenter.contract.MainView;
 import com.google.android.material.tabs.TabLayout;
 
 import java.util.List;
@@ -116,7 +116,9 @@ public class MainActivity extends AppCompatActivity implements MainView {
         mAdapter.setmProductList(productList);
         mAdapter.notifyDataSetChanged();
         TabLayout.Tab tab = binding.tabLayout.getTabAt(0);
-        tab.select();
+        if(tab!=null){
+            tab.select();
+        }
 
     }
 

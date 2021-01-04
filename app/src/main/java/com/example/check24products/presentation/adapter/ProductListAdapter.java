@@ -1,4 +1,4 @@
-package com.example.check24products.app.adapter;
+package com.example.check24products.presentation.adapter;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -9,10 +9,10 @@ import android.widget.ImageView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.check24products.app.constants.Constants;
+import com.example.check24products.presentation.constants.Constants;
 import com.example.check24products.databinding.ProductItemBinding;
 import com.example.check24products.data.model.Product;
-import com.example.check24products.app.util.Utils;
+import com.example.check24products.presentation.util.Utils;
 
 import java.util.List;
 

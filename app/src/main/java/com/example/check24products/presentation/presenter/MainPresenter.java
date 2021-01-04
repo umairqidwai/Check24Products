@@ -1,10 +1,10 @@
-package com.example.check24products.app.presenter;
+package com.example.check24products.presentation.presenter;
 
 import androidx.annotation.NonNull;
 
 import com.example.check24products.domain.interactor.GetProducts;
 import com.example.check24products.data.model.ProductResponse;
-import com.example.check24products.app.presenter.contract.MainView;
+import com.example.check24products.presentation.presenter.contract.MainView;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.observers.DisposableObserver;
 import retrofit2.Response;
@@ -52,13 +52,13 @@ public class MainPresenter {
 
                     }
                 } else {
-                    view.onError(response.message());
+                    view.onError("Error Code:"+response.code()+" \nError Message:"+response.message());
                 }
             }
 
             @Override
             public void onError(@NonNull Throwable e) {
-                view.onError(e.getLocalizedMessage());
+                view.onError(e.getMessage());
                 view.hideProgressBar();
             }
 

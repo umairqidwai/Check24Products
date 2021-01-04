@@ -1,4 +1,4 @@
-package com.example.check24products.app.util;
+package com.example.check24products.presentation.util;
 
 import com.example.check24products.data.model.Price;
 

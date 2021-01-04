@@ -1,4 +1,4 @@
-package com.example.check24products.app.presenter.contract;
+package com.example.check24products.presentation.presenter.contract;
 
 import com.example.check24products.data.model.Header;
 import com.example.check24products.data.model.Product;
