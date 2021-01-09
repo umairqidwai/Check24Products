@@ -1,4 +1,4 @@
-package com.example.check24products.data.repo;
+package com.example.check24products.domain.repo;
 
 import com.example.check24products.data.model.ProductResponse;
 

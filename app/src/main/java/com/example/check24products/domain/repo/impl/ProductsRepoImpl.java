@@ -1,9 +1,9 @@
-package com.example.check24products.data.repo.impl;
+package com.example.check24products.domain.repo.impl;
 
 import com.example.check24products.data.model.ProductResponse;
-import com.example.check24products.data.remote.api.ProductService;
 import com.example.check24products.data.remote.RetrofitClient;
-import com.example.check24products.data.repo.ProductsRepo;
+import com.example.check24products.data.remote.api.ProductService;
+import com.example.check24products.domain.repo.ProductsRepo;
 
 import io.reactivex.Observable;
 import retrofit2.Response;
