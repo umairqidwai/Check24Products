@@ -1,13 +1,11 @@
 package com.example.check24products.presentation.presenter;
 
-import com.example.check24products.data.model.ProductResponse;
 import com.example.check24products.domain.interactor.GetProducts;
 import com.example.check24products.domain.repo.impl.ProductsRepoImpl;
 import com.example.check24products.presentation.presenter.contract.MainView;
 import com.example.check24products.presentation.scheduler.DefaultSchedulerProvider;
 
 import io.reactivex.observers.DisposableObserver;
-import retrofit2.Response;
 
 public class MainPresenter {
 
@@ -23,7 +21,7 @@ public class MainPresenter {
 
     public void getProducts(boolean isRefresh) {
 
-        getProducts.executeUseCase(new DisposableObserver<Response<ProductResponse>>() {
+        getProducts.executeUseCase(new DisposableObserver<GetProducts.Result>() {
             @Override
             protected void onStart() {
                 super.onStart();
@@ -31,29 +29,31 @@ public class MainPresenter {
             }
 
             @Override
-            public void onNext(Response<ProductResponse> response) {
-                if (response.isSuccessful()) {
-                    ProductResponse responseBody = response.body();
+            public void onNext(GetProducts.Result response) {
+
+                if (response.getIsSuccess()) {
                     if (!isRefresh) {
-                        if (responseBody.getFilters() != null && responseBody.getFilters().size() > 0) {
-                            view.loadFilters(responseBody.getFilters());
+                        if (response.getData().getFilters() != null && response.getData().getFilters().size() > 0) {
+                            view.loadFilters(response.getData().getFilters());
                         }
-                        if (responseBody.getHeader() != null) {
-                            view.loadHeader(responseBody.getHeader());
+                        if (response.getData().getHeader() != null) {
+                            view.loadHeader(response.getData().getHeader());
                         }
                     }
 
-                    if (responseBody.getProducts() != null && responseBody.getProducts().size() > 0) {
+                    if (response.getData().getProducts() != null && response.getData().getProducts().size() > 0) {
                         if (isRefresh) {
-                            view.refresh(responseBody.getProducts());
+                            view.refresh(response.getData().getProducts());
                         } else {
-                            view.loadProducts(responseBody.getProducts());
+                            view.loadProducts(response.getData().getProducts());
                         }
 
                     }
                 } else {
-                    view.onError("Error Code:"+response.code()+" \nError Message:"+response.message());
+                    view.onError("Error Message: " + response.getErrMsg());
+
                 }
+
             }
 
             @Override
